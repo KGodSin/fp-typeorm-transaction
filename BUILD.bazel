@@ -1,0 +1,43 @@
+# Add rules here to build your software
+# See https://docs.bazel.build/versions/main/build-ref.html#BUILD_files
+
+
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary","js_library")
+load("@npm//@bazel/typescript:index.bzl", "ts_project","ts_library","ts_config")
+
+
+package(default_visibility = ["//visibility:public"])
+exports_files(["tsconfig.json"])
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
+    deps = ["//:tsconfig.json"],
+)
+
+ts_project(
+    name = "tsproject",
+    deps = [
+        "@npm//fp-ts",
+        "@npm//typeorm"
+    ],
+    source_map = True,
+    resolve_json_module = True,
+    out_dir ='dist',
+    srcs = [
+        "index.ts",
+        "transaction.ts"
+        # "package.json"
+    ],
+    tsconfig = "tsconfig"
+)
+
+js_library(
+    name = "library",
+    srcs = [
+        "package.json"
+    ],
+    deps = [
+        ":tsproject"
+    ]
+)
