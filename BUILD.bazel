@@ -21,7 +21,6 @@ ts_project(
         "@npm//fp-ts",
         "@npm//typeorm"
     ],
-    source_map = True,
     resolve_json_module = True,
     declaration = True,
     out_dir ='dist',
