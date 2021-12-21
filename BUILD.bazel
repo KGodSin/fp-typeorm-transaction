@@ -23,6 +23,7 @@ ts_project(
     ],
     source_map = True,
     resolve_json_module = True,
+    declaration = True,
     out_dir ='dist',
     srcs = [
         "index.ts",

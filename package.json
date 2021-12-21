@@ -1,7 +1,13 @@
 {
     "name": "fp-typeorm-transaction",
     "version": "0.1.0",
-    "private": true,
+    "author": {
+        "email": "kimhyuk722@live.co.kr",
+        "name": "Hyuk Kim"
+    },
+    "repository": {
+        "url": "https://github.com/KGodSin/fp-typeorm-transaction.git"
+    },
     "main": "dist/index.js",
     "devDependencies": {
         "@bazel/bazelisk": "latest",
@@ -10,6 +16,9 @@
         "@bazel/typescript": "^4.5.0",
         "typescript": "^4.5.4"
     },
+    "peerDependencies": {
+        "typeorm": "^0.2.41"
+    },
     "scripts": {
         "build": "bazel build //...",
         "test": "bazel test //..."
@@ -17,5 +26,6 @@
     "dependencies": {
         "fp-ts": "^2.11.5",
         "typeorm": "^0.2.41"
+
     }
 }
