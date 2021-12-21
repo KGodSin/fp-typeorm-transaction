@@ -1,6 +1,6 @@
 {
     "name": "fp-typeorm-transaction",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": {
         "email": "kimhyuk722@live.co.kr",
         "name": "Hyuk Kim"
@@ -26,6 +26,5 @@
     "dependencies": {
         "fp-ts": "^2.11.5",
         "typeorm": "^0.2.41"
-
     }
 }
